@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NodeJS Average Finder</title>
+</head>
+<body>
+  <p><strong>Average of Numbers</strong></p>
+  <p>Enter the no's you would like to find the average of seperated by commas (Ex: "1,2,3,4") in the inputbox:</p>
+  <input id="operation" value="" />
+  <button id="calculate">Calculate</button>
+  <p id="result">Average = </p>
+  
+  <script>
+    console.log("Script is being loaded sort of")
+    var calculate = document.getElementById('calculate');
+
+    calculate.onclick = function() {
+      var operation = document.getElementById("operation");
+      var result = document.getElementById('result');
+
+      var res = 0;
+      var numbers = operation.value.split(",");
+      for (var i=0; i<numbers.length; i++) {
+        res += parseInt(numbers[i]);
+      }
+      res /= numbers.length;
+
+      result.innerHTML = "Average = " + res;
+    }
+  </script>
+</body>
+</html>
